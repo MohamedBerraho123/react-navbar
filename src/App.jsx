@@ -1,10 +1,10 @@
+// app.jsx
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { About, Contact } from "./components/pages";
 // import AuthFromStudent from "../components/pages/login/AuthFromStudent"
 import AuthFromStudent from "../src/components/pages/login/AuthFromStudent"
-
 
 
 function App() {
