@@ -25,9 +25,9 @@ const StudentComponent = ({ userId, codeUIR, firstName, lastName, token, handleL
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log('Student added successfully!', response.data);
+
       } catch (err) {
-        console.error('Error adding student:', err);
+
       }
     };
 
@@ -38,14 +38,14 @@ const StudentComponent = ({ userId, codeUIR, firstName, lastName, token, handleL
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log("getStudentByUserId:", response.data);
-        console.log("- code UIR:", response.data.codeUIR);
+
+
 
         setFetchedStudent(response.data);
         // setStudentCodeUIR(response.data.codeUIR); // Update the codeUIR state when fetched
         setStudentCodeUIR(response.data.codeUIR);
       } catch (err) {
-        console.error('Error fetching student:', err);
+
       }
     };
 
@@ -58,8 +58,6 @@ const StudentComponent = ({ userId, codeUIR, firstName, lastName, token, handleL
     }
   }, [userId, token]);
 
-  console.log('Code UIR in StudentComponent:', studentcodeUIR || 'No code UIR found');
-  console.log('Code UIR in StudentComponent:', codeUIR || 'No code UIR found');
 
   return (
     <div>

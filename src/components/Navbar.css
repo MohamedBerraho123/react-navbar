@@ -1,20 +1,18 @@
-.active {
-    background-color: #ffffff;
-}
-
+/* Navbar Styles */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0344da;
     color: white;
+    padding: 1rem;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 nav .title {
     font-size: 1.5rem;
-    margin: 1rem;
     font-weight: bold;
     text-decoration: none;
     color: white;
@@ -22,59 +20,51 @@ nav .title {
 
 nav ul {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    list-style: none;
+    margin: 0 0.5rem;
 }
 
 nav ul li a {
-    display: block;
     text-decoration: none;
     color: white;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:not(.active):hover {
+nav ul li a:hover {
     background-color: #172554;
 }
 
 nav .menu {
     display: none;
-    position: absolute;
-    top: 0.75rem;
-    right: 0.5rem;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 2.25rem;
-    height: 2rem;
+    cursor: pointer;
 }
 
 nav .menu span {
-    height: 0.4rem;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 0.2rem;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
-
-@media (max-width: 480px) {
-    nav .menu {
-        display: flex;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
+/* Mobile Styles */
+@media (max-width: 768px) {
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        margin-bottom: 0.25rem;
+        background-color: #0344da;
+        position: absolute;
+        top: 60px;
+        left: 0;
     }
 
     nav ul.open {
@@ -84,9 +74,10 @@ nav .menu span {
     nav ul li {
         width: 100%;
         text-align: center;
+        margin: 0.5rem 0;
     }
 
-    nav ul li a {
-        margin: 0.2rem 0.5rem;
+    nav .menu {
+        display: block;
     }
 }

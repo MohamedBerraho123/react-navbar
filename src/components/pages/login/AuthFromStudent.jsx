@@ -50,7 +50,7 @@ const AuthFromStudent = () => {
     setPassword('');
     localStorage.removeItem('token');
     localStorage.removeItem('studentData');
-    console.log('User logged out');
+
   };
 
   return (
